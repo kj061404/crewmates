@@ -1,6 +1,6 @@
+import { useState, useEffect } from 'react'
 
-
-function CharacterForm({ onSubmit }) {
+function CharacterForm({ onSubmit, initialCharacter }) {
     const [character, setCharacter] = useState({
       name: '',
       class: '',
@@ -8,17 +8,25 @@ function CharacterForm({ onSubmit }) {
       weapon: '',
       alignment: ''
     })
+
+    useEffect(() => {
+      if (initialCharacter) {
+        setCharacter(initialCharacter)
+      }
+    }, [initialCharacter])
   
     const handleSubmit = (e) => {
       e.preventDefault()
       onSubmit(character)
-      setCharacter({
-        name: '',
-        class: '',
-        skill_level: 1,
-        weapon: '',
-        alignment: ''
-      })
+      if (!initialCharacter) {
+        setCharacter({
+          name: '',
+          class: '',
+          skill_level: 1,
+          weapon: '',
+          alignment: ''
+        })
+      }
     }
   
     const classes = ['Warrior', 'Mage', 'Rogue', 'Cleric', 'Ranger', 'Paladin']
@@ -63,7 +71,12 @@ function CharacterForm({ onSubmit }) {
             min="1"
             max="20"
             value={character.skill_level}
-            onChange={(e) => setCharacter({...character, skill_level: parseInt(e.target.value)})}
+            onChange={(e) => {
+              const value = e.target.value === '' ? 1 : parseInt(e.target.value);
+              if (!isNaN(value) && value >= 1 && value <= 20) {
+                setCharacter({...character, skill_level: value});
+              }
+            }}
             required
             className="form-input"
           />
@@ -101,7 +114,9 @@ function CharacterForm({ onSubmit }) {
           </select>
         </div>
   
-        <button type="submit" className="submit-btn">Create Character</button>
+        <button type="submit" className="submit-btn">
+          {initialCharacter ? 'Update Character' : 'Create Character'}
+        </button>
       </form>
     )
 }

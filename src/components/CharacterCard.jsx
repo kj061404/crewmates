@@ -1,6 +1,6 @@
-function CharacterCard({ character, onEdit, onDelete }) {
+function CharacterCard({ character, onEdit, onDelete, onClick }) {
     return (
-      <div className="character-card">
+      <div className="character-card" onClick={onClick} style={{ cursor: 'pointer' }}>
         <h3>{character.name}</h3>
         <div className="character-info">
           <p><span>Class:</span> {character.class}</p>
@@ -9,8 +9,14 @@ function CharacterCard({ character, onEdit, onDelete }) {
           <p><span>Alignment:</span> {character.alignment}</p>
         </div>
         <div className="character-actions">
-          <button onClick={() => onEdit(character)} className="edit-btn">Edit</button>
-          <button onClick={() => onDelete(character)} className="delete-btn">Delete</button>
+          <button onClick={(e) => {
+            e.stopPropagation();
+            onEdit(character);
+          }} className="edit-btn">Edit</button>
+          <button onClick={(e) => {
+            e.stopPropagation();
+            onDelete(character);
+          }} className="delete-btn">Delete</button>
         </div>
       </div>
     )
