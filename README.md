@@ -2,9 +2,9 @@
 
 Submitted by: **Kobe Jordan**
 
-This web app: **insert description**
+This web app: **A D&D Character Creator that allows users to create, manage, and customize their RPG characters. Users can create characters with different classes, levels, weapons, and alignments. The app features a gallery view of all characters, detailed character pages, and the ability to edit or delete characters. The interface includes visual elements like class icons and power level descriptions to enhance the RPG experience.**
 
-Time spent: **X** hours spent in total
+Time spent: **8** hours spent in total
 
 ## Required Features
 
@@ -13,8 +13,8 @@ The following **required** functionality is completed:
 
 - [X] **The web app contains a page that features a create form to add a new crewmate**
   - Users can name the crewmate
-  - Users can set the crewmate’s attributes by clicking on one of several values
-- [X] **The web app includes a summary page of all the user’s added crewmatese**
+  - Users can set the crewmate's attributes by clicking on one of several values
+- [X] **The web app includes a summary page of all the user's added crewmatese**
   -  The web app contains a summary page dedicated to displaying all the crewmates the user has made so far
   -  The summary page is sorted by creation date such that the most recently created crewmates appear at the top
 - [X] **A previously created crewmate can be updated from the list of crewmates in the summary page**
@@ -35,10 +35,10 @@ The following **optional** features are implemented:
   - e.g., a Dungeons and Dragons class or a development team role (project manager, product owner, etc.)
   - User can choose a `category` option to describe their crewmate before any attributes are specified
   - Based on the category value, users are allowed to access only a subset of the possible attributes
-- [ ] A section of the summary page, displays summary statistics about a user’s crew on their crew page
+- [ ] A section of the summary page, displays summary statistics about a user's crew on their crew page
   - e.g., the percent of members with a certain attribute 
-- [ ] The summary page displays a custom “success” metric about a user’s crew which changes the look of the crewmate list
-  - e.g., a pirate crew’s predicted success at commandeering a new galley
+- [ ] The summary page displays a custom "success" metric about a user's crew which changes the look of the crewmate list
+  - e.g., a pirate crew's predicted success at commandeering a new galley
 
 
 The following **additional** features are implemented:
